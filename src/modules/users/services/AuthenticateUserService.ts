@@ -29,6 +29,8 @@ class AuthenticateUserService {
 
     if (!user) throw new AppError('user not found', 401);
 
+    // console.log(password, ' //// ', user.password);
+
     const passwordMatched = await this.hashProvider.compareHash(
       password,
       user.password,
